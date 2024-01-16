@@ -1,0 +1,39 @@
+﻿@model Model
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="fw-bold mb-3">Doctors</h1>
+
+<form class="mb-3 row" asp-action="Index" method="get">
+    <div class="col-auto">
+        <label class="col-form-label" for="specialty">Specialty:</label>
+    </div>
+    <div class="col-auto">
+        @{
+            var specialtyList = new SelectList(Model.Specialties, "Code", "Name");
+        }
+        @Html.DropDownList("specialty", specialtyList, "All", new { @class = "form-select", onchange = "this.form.submit()" })
+    </div>
+</form>
+
+<div class="row">
+    @foreach (var doctor in Model.Doctors)
+    {
+        <div class="col-md-4 mb-3 d-flex" style="height: 150px">
+            <div class="card flex-fill">
+                <div class="card-header text-light bg-success">
+                    <h5 class="my-0 font-weight-normal">@doctor.Name</h5>
+                </div>
+                <div class="card-body py-1">
+                    <ul class="list-group flex-grow-1">
+                        @foreach (var specialty in doctor.Specialties)
+                        {
+                            <li class="list-group-item p-0 border-0">@specialty</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+</div>

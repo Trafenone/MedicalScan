@@ -1,0 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins";
+    background: linear-gradient(0deg, #f5fffa, #e3fff2, #ffffff);
+    margin-bottom: 60px;
+}
+
+:root {
+    --bs-success-rgb: 42, 137, 108;
+}
