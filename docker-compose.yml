@@ -16,7 +16,7 @@ services:
         - medicalscan_network
   medicalscan:
     container_name: medical-scan
-    image: ${DOCKER_REGISTRY-}medicalscan
+    image: medicalscan:latest
     build:
       context: .
       dockerfile: MedicalScan/Dockerfile
@@ -25,6 +25,6 @@ services:
     depends_on:
         - medicalscandb
     environment:
-        - DataConnection=Server=medicalscandb;Initial Catalog=MedicalScan;User Id=sa;Password=passWord@12345#;
+        - ConnectionStrings__DataConnection=Server=medicalscandb;Initial Catalog=MedicalScan;User Id=sa;Password=passWord@12345#;TrustServerCertificate=True;MultiSubnetFailover=True
     networks:
         - medicalscan_network

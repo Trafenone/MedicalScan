@@ -8,9 +8,9 @@ public class AppMappingProfile : Profile
 {
     public AppMappingProfile()
     {
-        CreateMap<Doctor, DoctorViewModel>()
+        CreateMap<Doctor, DoctorModel>()
             .ForMember(dest => dest.Specialties, opt =>
                 opt.MapFrom(src => src.Specialties.Select(s => s.Name)));
-        CreateMap<Specialty, SpecialtyViewModel>();
+        CreateMap<Specialty, SpecialtyModel>();
     }
 }

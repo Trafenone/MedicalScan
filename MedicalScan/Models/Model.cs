@@ -2,6 +2,6 @@
 
 public record Model
 {
-    public List<DoctorViewModel> Doctors { get; set; }
-    public List<SpecialtyViewModel> Specialties { get; set; }
+    public List<DoctorModel> Doctors { get; init; }
+    public List<SpecialtyModel> Specialties { get; init; }
 }

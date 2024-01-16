@@ -4,7 +4,7 @@ using MedicalScan.Mapping;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddInfrastructure(Environment.GetEnvironmentVariable("DataConnection"));
+builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("DataConnection"));
 builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 builder.Services.AddControllersWithViews();
 

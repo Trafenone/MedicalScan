@@ -1,6 +1,6 @@
 ﻿namespace MedicalScan.Models;
 
-public record SpecialtyViewModel
+public record SpecialtyModel
 {
     public string Name { get; init; }
     public string Code { get; init; }

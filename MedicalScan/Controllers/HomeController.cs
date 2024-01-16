@@ -35,11 +35,11 @@ public class HomeController : Controller
         }
 
         var doctors = await doctorsQuery
-            .ProjectTo<DoctorViewModel>(_mapper.ConfigurationProvider)
+            .ProjectTo<DoctorModel>(_mapper.ConfigurationProvider)
             .ToListAsync();
 
         var specialties = await _context.Specialties
-            .ProjectTo<SpecialtyViewModel>(_mapper.ConfigurationProvider)
+            .ProjectTo<SpecialtyModel>(_mapper.ConfigurationProvider)
             .ToListAsync();
 
         return new Model
